@@ -48,7 +48,7 @@ int main(void) {
 	printf("\n**** Original Book list Before Sorting : ****\n");
 	printArray(book, len);
 
-// Mergre Sort According to Price
+// Merge Sort According to Price
 	mergeSort(book, 0, len - 1);
 	printf("\n**** Array After Merge Sort According to Price : ****\n");
 	printArray(book, len);
