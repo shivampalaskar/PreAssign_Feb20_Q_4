@@ -30,19 +30,20 @@ int cmpfunc(const void * book1, const void * book2) {
 int main(void) {
 	BOOK book[10];
 
+// Storing Data into the structure array
 	char name[10][20] = { "Physics", "Chemistry", "Mathematics", "Environment",
 			"Computer Science", "Sociology", "Geography", "History", "Biology",
-			"English" };
-	int id[10] = { 101, 222, 245, 22, 43, 765, 45, 65, 103, 98 };
-	int price[10] = { 147, 432, 230, 678, 340, 120, 320, 111, 430, 601 };
+			"English"};
+	int id[10] = { 101, 222, 245, 22, 43, 765, 45, 65, 103, 98};
+	int price[10] = { 147, 432, 230, 678, 340, 120, 320, 111, 430, 601};
 
-	for (int i = 0; i < 10; i++) {
+	int len = sizeof(book) / sizeof(book[0]);
+
+	for (int i = 0; i < len; i++) {
 		book[i].id = id[i];
 		strcpy(book[i].name, name[i]);
 		book[i].price = price[i];
 	}
-
-	int len = sizeof(book) / sizeof(book[0]);
 
 // Original Array without sort
 	printf("\n**** Original Book list Before Sorting : ****\n");
@@ -73,7 +74,7 @@ void mergeSort(BOOK book[], int p, int r) {
 
 // function to merge the subarrays
 void merge(BOOK book[], int p, int q, int r) {
-	BOOK temp[10];   //same size of book[]
+	BOOK temp[r+1];   //same size of book[]
 	int i, j, k;
 	k = 0;
 	i = p;
